@@ -584,12 +584,25 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
+  // Anycubic Kossel
+  // this is for the aluminium bed with a BuildTak-like sticker on it
+  // from pid autotune. "M303 E-1 C8 S60" to run autotune on the bed at 60 degreesC for 8 cycles
   #if ANYCUBIC_KOSSEL_ENABLE_BED == 1
+    #define DEFAULT_bedKp 374.03
+    #define DEFAULT_bedKi 72.47
+    #define DEFAULT_bedKd 482.59
+  #elif ANYCUBIC_KOSSEL_ENABLE_BED == 2
+    // TODO get real PID values for Ultrabase Bed
+    #define DEFAULT_bedKp 374.03
+    #define DEFAULT_bedKi 72.47
+    #define DEFAULT_bedKd 482.59
+  #endif
+
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
+  //#define DEFAULT_bedKp 10.00
+  //#define DEFAULT_bedKi .023
+  //:#define DEFAULT_bedKd 305.4
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
