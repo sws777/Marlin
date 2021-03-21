@@ -3670,7 +3670,7 @@
   #else
 
     /**
-     * MMU1 Extruder Sensor
+     *nn MMU1 Extruder Sensor
      *
      * Support for a Průša (or other) IR Sensor to detect filament near the extruder
      * and make loading more reliable. Suitable for an extruder equipped with a filament
